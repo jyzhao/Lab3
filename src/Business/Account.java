@@ -18,6 +18,10 @@ public class Account {
     private int balance;
     private Date createdOn;
 
+    public Account () {
+        this.createdOn = new Date();
+    }
+    
     public String getBankName() {
         return bankName;
     }
@@ -57,5 +61,11 @@ public class Account {
     public void setCreatedOn(Date createdOn) {
         this.createdOn = createdOn;
     }
+
+    @Override
+    public String toString() {
+        return bankName;
+    }
+  
     
 }

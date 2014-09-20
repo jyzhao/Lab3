@@ -6,7 +6,7 @@
 package Business;
 
 import java.util.ArrayList;
-
+import Business.Account;
 /**
  *
  * @author zhaojiyuan
@@ -25,5 +25,23 @@ public class AccountDirectory {
         this.accountDirectory = accountDirectory;
     }
     
+    public Account createAndAddAccount() {
+            Account account = new Account();
+            accountDirectory.add(account);
+            return account;
+        }
+    
+    public void deleteAccount (Account account) {
+        accountDirectory.remove(account);
+    }
+    
+    public Account searchUsingAccountNumber (String accountNumber) {
+        for (Account account: accountDirectory) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                return account;
+            }
+        }
+        return null;
+    }
     
 }
